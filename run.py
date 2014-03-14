@@ -115,7 +115,7 @@ if cmdStr == "init":
 		generating += 1
 
 elif cmdStr == "move":
-    blacklist = [a[1:3] for a in jsonIn['moves'] if (a[0] == "0")] + jsonIn['hit'] + jsonIn['missed']
+    blacklist = jsonIn['hit'] + jsonIn['missed']
     valid = getvalidmoves(blacklist)
     if len(jsonIn['hit']) == 0:
         print "{'move': '%s'}".replace("'", '"') % choice(valid)
